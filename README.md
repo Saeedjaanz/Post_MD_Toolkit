@@ -140,3 +140,9 @@ If you use this toolkit, please cite the underlying libraries:
 - **MDAnalysis** — Michaud-Agrawal *et al.*, *J. Comput. Chem.* (2011); Gowers *et al.* (2016)
 - **scikit-learn** — Pedregosa *et al.*, *JMLR* (2011)
 - Plus the MD engine used to generate the trajectory (GROMACS, AMBER, Desmond, …).
+
+---
+
+## License
+
+Released under the [MIT License](LICENSE) — free to use, modify, and distribute.
