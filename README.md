@@ -1,7 +1,7 @@
 # Post-MD Analysis Toolkit
 
 **Post-processing and publication-quality analysis of Molecular Dynamics (MD)
-simulation trajectories** — works with output from **GROMACS, Desmond, AMBER,
+simulation trajectories** works with output from **GROMACS, Desmond, AMBER,
 CHARMM, NAMD, OpenMM** and any other engine that MDAnalysis can read.
 
 A single, configurable script reads a topology + trajectory and generates a
@@ -11,7 +11,7 @@ motions, and protein–ligand contacts of a system:
 **PCA · Free Energy Landscape (FEL) · Gibbs Free Energy Landscape · DCCM ·
 Contact-frequency bar chart · Contact map (residue × time)**
 
-The toolkit is **system-agnostic** — point it at any protein, protein–ligand, or
+The toolkit is **system-agnostic** point it at any protein, protein–ligand, or
 protein–protein trajectory and set a few options at the top of the script.
 
 ---
@@ -28,12 +28,38 @@ protein–protein trajectory and set a few options at the top of the script.
 | 6 | `06_contact_heatmap.png` | Contact map (residue × time) | When during the run is each contact formed? |
 
 A companion table, `contact_freq.csv`, lists the per-residue ligand-contact
-frequency. The images in [`example_figures/`](example_figures/) are sample
-outputs from a demonstration run.
+frequency. The images below are sample outputs from a demonstration run (full
+resolution in [`example_figures/`](example_figures/)).
 
 > **A plain-language, step-by-step explanation of every analysis (PCA, FEL,
 > Gibbs FEL, DCCM, contacts, contact bar plot) is in
 > [`docs/ANALYSIS_GUIDE.md`](docs/ANALYSIS_GUIDE.md).**
+
+### Example outputs
+
+**1 · Principal Component Analysis (PCA)** — dominant collective motions, projected onto PC1/PC2 with a free-energy-coloured surface (green star = start, red star = end).
+
+<p align="center"><img src="example_figures/01_PCA.png" alt="PCA" width="600"></p>
+
+**2 · Free Energy Landscape (FEL)** — 3-D free-energy surface over PC1/PC2; valleys are stable, populated conformations.
+
+<p align="center"><img src="example_figures/02_FEL_3D_surface.png" alt="Free Energy Landscape" width="600"></p>
+
+**3 · Gibbs Free Energy Landscape (RMSD vs Rg)** — stability/compactness landscape shown as a 2-D map and a 3-D surface.
+
+<p align="center"><img src="example_figures/03_Gibbs_FEL_RMSD_Rg.png" alt="Gibbs Free Energy Landscape" width="850"></p>
+
+**4 · Dynamic Cross-Correlation Matrix (DCCM)** — correlated (blue, +1) vs anti-correlated (red, −1) residue motions.
+
+<p align="center"><img src="example_figures/04_DCCM.png" alt="DCCM" width="600"></p>
+
+**5 · Contact-frequency bar chart** — per-residue ligand contact frequency; dashed line = 30 % significance threshold.
+
+<p align="center"><img src="example_figures/05_contact_bar.png" alt="Contact frequency bar chart" width="800"></p>
+
+**6 · Contact map (residue × time)** — when each contact is present across the simulation.
+
+<p align="center"><img src="example_figures/06_contact_heatmap.png" alt="Contact map over time" width="800"></p>
 
 ---
 
